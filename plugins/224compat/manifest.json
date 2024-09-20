@@ -1,0 +1,14 @@
+{
+  "name": "224 C0MP47",
+  "description": "An epic plugin to get full Vendetta/Bunny/Revenge support on discord v224.",
+  "authors": [
+    {
+      "name": "NotMarek",
+      "id": "206299359007080450"
+    }
+  ],
+  "main": "src/index.jsx",
+  "vendetta": {
+    "icon": "ic_badge_staff"
+  }
+}
