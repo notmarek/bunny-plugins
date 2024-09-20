@@ -39,6 +39,6 @@ jobs:
 
         # Documentation: https://github.com/peaceiris/actions-gh-pages
       - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: ./dist
