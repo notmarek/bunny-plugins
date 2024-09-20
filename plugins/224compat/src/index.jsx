@@ -70,11 +70,18 @@ function NewAddonPage({ label, fetchFn }) {
   }
 
   return (
-    <View style={{ padding: 8, gap: 12 }}>
+    <View
+      style={{
+        padding: 8,
+        gap: 12,
+      }}
+    >
       <TextInput
         autoFocus={true}
         isClearable={true}
         value={value}
+        label={"URL"}
+        placeholder={"https://notmarek.github.io/bunny-plugins/224compat"}
         onChange={(v) => {
           setValue(v);
           if (error) setError("");
