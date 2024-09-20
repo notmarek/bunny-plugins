@@ -178,25 +178,25 @@ function AlertPatch(args) {
 
 export default {
   onLoad: async () => {
-    const socket = bunny.api.debug.socket;
-    if (socket === undefined || socket.readyState === WebSocket.CLOSED)
-      await bunny.api.debug.connectToDebugger("10.10.10.177:9090");
+    // const socket = bunny.api.debug.socket;
+    // if (socket === undefined || socket.readyState === WebSocket.CLOSED)
+    // await bunny.api.debug.connectToDebugger("10.10.10.177:9090");
     const modals = findByProps("AlertModal", "AlertActions");
     const alerts = findByProps("openAlert", "dismissAlert");
     //patches.push(before("AlertModal", modals, AlertPatch));
-    logger.log("hiiiibefore insted");
+
     patches.push(
       window.bunny.api.patcher.instead("openAlert", alerts, openAlertDetour),
     );
-    logger.log("hello from my ass");
-    patches.push(
-      before("log", logger, (args) => {
-        bunny.api.debug.socket.send(JSON.stringify({ message: args }));
-        return args;
-      }),
-    );
-    bunny.api.debug.socket.send(JSON.stringify({ message: "Loaded" }));
-    // logger.log(lol);
+    // logger.log("hello from my ass");
+    // patches.push(
+    //   before("log", logger, (args) => {
+    //     bunny.api.debug.socket.send(JSON.stringify({ message: args }));
+    //     return args;
+    //   }),
+    // );
+    // bunny.api.debug.socket.send(JSON.stringify({ message: "Loaded" }));
+    // // logger.log(lol);
     logger.log("Hello world!");
   },
   onUnload: () => {
